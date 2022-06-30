@@ -1,0 +1,29 @@
+.nav-link {
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.container-fluid {
+    margin: 0 5em ;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.fa-pencil {
+    color: #49FF00;
+}
+
+.fa-xmark {
+    color: red;
+}
+
+.delete-form {
+    display: inline;
+    margin-left: 5%;
+}

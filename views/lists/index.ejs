@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+
+<div class = "container">
+    <div class = "container">
+        <h1 class = "text-center my-5">Improve your efficiency by making daily To-Do Lists!</h1>
+        <h3 class = "text-center ma-5">Your To-Do Lists : </h3>
+    </div>
+    <div class = "row text-center" style = "display : flex; flex-wrap :wrap";>
+        <% lists.forEach(function(list) { %>
+            <div class = "col-md-4 col-sm-6">
+                <div class="card text-dark bg-light my-4">
+                    <div class="card-body">
+                      <h4 class="card-title"><%= list.date %></h4>
+                    </div>
+                    <div class="card-body">
+                        <a href="/lists/<%=list._id%>" class = "btn btn-success card-link">View Tasks</a>
+                        <a href="/lists/new" class = "btn btn-warning card-link">New List</a>
+                        <form class = "delete-form" action = "/lists/<%=list._id%>?_method=DELETE" method = "POST">
+                            <button type = "submit" class = "btn btn-danger card-link">Delete List</button>
+                        </form>
+                    </div> 
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+
+<%- include('../partials/footer') %>

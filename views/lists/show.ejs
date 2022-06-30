@@ -1,0 +1,77 @@
+<%- include('../partials/header') %>
+
+
+
+<div class = "container">
+  <div class="container">
+    <div class="row">
+      <div style = "width: 30%; margin: 30px auto">
+          <div class="card">
+              <div class="card-body">
+                <h4 class="card-title text-center"><%= list.date %></h4>
+                <p class="card-text">
+                  <% list.items.forEach(function(item) { %>
+                    <ul class="list-group">
+                      <li class="list-group-item my-2">
+                        <div class="row">
+                          <div class = "col-8"><%= item.name %></div>
+                          <div class = "col">
+                            <a class = "float-end" href = "/lists/<%=list._id%>/items/<%=item._id%>/edit">
+                              <i class = "fa-solid fa-pencil fa-lg"></i>
+                            </a>
+                          </div>
+                          <div class = "col">
+                            <a class = "float-end" href = "/lists/<%=list._id%>/items/<%=item._id%>">
+                              <i class = "fa-solid fa-xmark fa-lg"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  <% }) %> 
+                </p>
+                <div class = "text-center">
+                  <a href="/lists/<%=list._id%>/items/new" class="btn btn-warning">Add a new Item</a>
+                  <!-- <form class = "delete-form" action = "/lists/<%=list._id%>?_method=DELETE" method = "POST">
+                    <button type = "submit" class = "btn btn-danger card-link">Delete List</button>
+                  </form> -->
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <script>
+  function checkBox(list) {
+    var index;
+    var c1 = 0;
+    var arr = document.getElementsByClassName("form-check-input");
+
+    list.items.forEach(function(item) {
+      if(item.checkedVal === true) {
+        arr[c1].checked = true;
+      }
+      c1++;
+    });
+
+    for(var i = 0; i < arr.length; i++) {
+      var c2 = 0;
+      if(arr[i].checked === true) {
+        index = i;
+      }
+      list.items.forEach(function(item) {
+        c++;
+        if(c === index) {
+          item.checkedVal = true;
+        }
+        console.log("Item : " + item.name + " - " + item.checked);
+      });
+    }
+  }
+</script> -->
+
+
+
+<%- include('../partials/footer') %>

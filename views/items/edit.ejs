@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+
+<div class="container">
+    <div class="row">
+        <h1 class = "my-4" style="text-align: center">Edit your Task</h1>
+        <div style = "width: 30%; margin: 30px auto">
+          <form action="/lists/<%=list_id%>/items/<%=item._id%>?_method=PUT", method="POST">
+              <div class="d-grid gap-2 mb-3">
+                <input type = "text" class = "form-control" name = "item[name]" value = "<%= item.name %>">
+              </div>
+              <div class="d-grid gap-2 my-3">
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Edit</button>
+              </div>
+          </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/footer') %>

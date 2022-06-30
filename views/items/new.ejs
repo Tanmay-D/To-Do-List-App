@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+
+<div class="container">
+    <div class="row">
+        <h1 class = "my-4" style="text-align: center">Add a new item to our To-Do List</h1>
+        <div style = "width: 30%; margin: 30px auto">
+          <form action="/lists/<%=list._id%>/items", method="POST">
+              <div class="d-grid gap-2 mb-3">
+                <input type = "text" class = "form-control" name = "item[name]" placeholder = "Enter the to do list task">
+              </div>
+              <div class="d-grid gap-2 my-3">
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+              </div>
+          </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/footer') %>
